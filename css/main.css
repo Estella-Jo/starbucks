@@ -12,11 +12,15 @@ img {
 a {
   text-decoration: none;
 }
+
+/*INNER*/
 .inner {
   width: 1100px;
   margin: 0 auto;
   position: relative;
 }
+
+/*BUTTON*/
 .btn {
   width: 130px;
   padding: 10px;
@@ -35,38 +39,40 @@ a {
   background-color: #333;
   color: #fff;
 }
-.btn .btn--reverse {
+.btn.btn--reverse {
   background-color: #333;
   color: #fff;
 }
-.btn .btn--reverse:hover {
+.btn.btn--reverse:hover {
   background-color: transparent;
   color: #333;
 }
-.btn .btn--brown {
+.btn.btn--brown {
   color: #592B18;
   border-color: #592B18;
 }
-.btn .btn--brown:hover {
+.btn.btn--brown:hover {
   color: #FFF;
   border-color: #592B18;
 }
-.btn .btn--gold {
+.btn.btn--gold {
   color: #D9AA8A;
   border-color: #D9AA8A;
 }
-.btn .btn--gold:hover {
+.btn.btn--gold:hover {
   color: #FFF;
   border-color: #D9AA8A;
 }
-.btn .btn--white {
+.btn.btn--white {
   color: #FFF;
   border-color: #FFF;
 }
-.btn .btn--white:hover {
+.btn.btn--white:hover {
   color: #333;
   border-color: #FFF;
 }
+
+/*BACK TO POSITION*/
 .back-to-position {
   opacity: 0;
   transition: 1s;
@@ -97,7 +103,7 @@ a {
 /* HEADER */
 header {
   width: 100%;
-  background-color: #f6f5f0;
+  background-color: #F6F5F0;
   border-bottom: 1px solid #c8c8c8;
   position: fixed;
   top: 0;
@@ -119,7 +125,7 @@ header .sub-menu {
   top: 10px;
   right: 0;
   display: flex;
-  }
+}
 header .sub-menu ul.menu {
   font-family: Arial, sans-serif;
   display: flex;
@@ -137,11 +143,11 @@ header .sub-menu ul.menu li::before {
   bottom: 0;
   margin: auto;
 }
-header .sub-menu ul.menu li:first-child:before {
+header .sub-menu ul.menu li:first-child::before {
   display: none;
 }
 header .sub-menu ul.menu li a {
-  font-size: 12px;
+  font-size: 13px;
   padding: 11px 16px;
   display: block;
   color: #656565;
@@ -155,7 +161,7 @@ header .sub-menu .search {
 }
 header .sub-menu .search input {
   width: 36px;
-  height: 34px;
+  height: inherit;
   padding: 4px 10px;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -248,6 +254,8 @@ header .main-menu .item .item__contents .contents__texture p {
   color: #669900;
   margin: 4px 0 14px;
 }
+
+/*BADGES*/
 header .badges {
   position: absolute;
   top: 132px;
@@ -283,27 +291,27 @@ header .badges .badge {
 }
 .visual .cup1.image {
   position: absolute;
-  top: 0;
-  left: -47px;
+  bottom: 0;
+  right: -47px;
 }
 .visual .cup1.text {
   position: absolute;
   top: 38px;
-  left: 171px;
+  right: 171px;
 }
 .visual .cup2.image {
   position: absolute;
-  top: 0;
-  left: 162px;
+  bottom: 0;
+  right: 162px;
 }
 .visual .cup2.text {
   position: absolute;
   top: 321px;
-  left: 416px;
+  right: 416px;
 }
 .visual .spoon {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 275px;
 }
 .visual .fade-in {
@@ -337,6 +345,7 @@ header .badges .badge {
 .notice .notice-line .inner {
   height: 62px;
   display: flex;
+  z-index: 1;
 }
 .notice .notice-line .inner__left {
   width: 60%;
@@ -376,7 +385,7 @@ header .badges .badge {
 }
 
 .notice .notice-line .inner__right {
-  width: 64%;
+  width: 40%;
   height: 100%;
   display: flex;
   justify-content: flex-end;
@@ -397,6 +406,8 @@ header .badges .badge {
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
   font-size: 30px;
 }
+
+/*PROMOTION*/
 .notice .promotion {
   height: 693px;
   background-color: #f6f5ef;
@@ -470,7 +481,7 @@ header .badges .badge {
   margin-left: -480px;
 }
 .notice .promotion .swiper-next {
-  left: 50%;
+  right: 50%;
   margin-right: -480px;
 }
 .notice .promotion .swiper-prev:hover,
@@ -600,9 +611,6 @@ header .badges .badge {
 .season-product .text-group .description {
   margin-bottom: 15px;
 }
-.season-product .text-group .more {
-
-}
 
 
 /* RESERVE COFFEE */
@@ -622,7 +630,7 @@ header .badges .badge {
   top: 124px;
   left: 208px;
 }
-.reserve-coffee .season-product {
+.reserve-coffee .product {
   position: absolute;
   top: 0;
   right: 0;
@@ -676,13 +684,13 @@ header .badges .badge {
 }
 .reserve-store .medal .front,
 .reserve-store .medal .back {
-  width: 334px;
-  height: 334px;
+  width: inherit;
+  height: inherit;
   backface-visibility: hidden;
   transition: 1s;
+  position: absolute;
 }
 .reserve-store .medal .front {
-  position: absolute;
   transform: rotateY(0deg);
 }
 .reserve-store .medal:hover .front {
@@ -705,7 +713,7 @@ header .badges .badge {
 
 
 /* FIND STORE */
-section.find-store {
+.find-store {
   background-image: url("../images/find_store_bg.jpg");
 }
 .find-store .inner {
@@ -775,6 +783,7 @@ section.find-store {
   top: 0;
   bottom: 0;
   margin: auto;
+  transition: .4s;
 }
 .awards .swiper-prev {
   left: -100px;
@@ -863,6 +872,7 @@ footer .logo {
 }
 
 
+/*SCROLL TO TOP*/
 #to-top {
   width: 42px;
   height: 42px;
